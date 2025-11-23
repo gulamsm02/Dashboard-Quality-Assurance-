@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generate Dokumen QA - Bank Jakarta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bj: {
+                red: "#b91c1c",
+                redSoft: "#fecaca",
+                redSoft2: "#fee2e2",
+                dark: "#1f2937",
+                darkSoft: "#111827",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="min-h-screen bg-slate-100 text-slate-900">
+    <div class="flex min-h-screen">
+      <!-- ============ SIDEBAR ============ -->
+      <aside class="hidden md:flex w-64 flex-col bg-bj-red text-white shadow-xl">
+        <!-- Logo -->
+        <div
+          class="flex items-center gap-3 px-6 py-4 border-b border-red-700/40"
+        >
+          <div
+            class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 border border-white/30 overflow-hidden"
+          >
+            <img
+              src="bankjakarta.png"
+              alt="Bank Jakarta"
+              class="h-8 object-contain"
+            />
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-red-100/80">
+              Bank Jakarta
+            </p>
+            <p class="text-sm font-semibold">QA Monitoring</p>
+          </div>
+        </div>
+
+        <!-- Menu -->
+        <nav class="flex-1 px-3 py-4 space-y-1 text-sm">
+          <h2
+            class="px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-red-100/70 mb-2"
+          >
+            Main
+          </h2>
+
+          <!-- Dashboard QA -->
+          <a
+            href="index.html"
+            class="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-red-100 hover:bg-white/10 transition"
+          >
+            <span
+              class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/15 text-xs"
+              >📊</span
+            >
+            <span class="flex-1 text-left">Dashboard QA</span>
+          </a>
+
+          <!-- Generate Dokumen (HALAMAN AKTIF) -->
+          <button
+            class="w-full flex items-center gap-3 rounded-lg px-3 py-2 bg-white/15 text-white shadow-sm shadow-black/20"
+          >
+            <span
+              class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/15 text-xs"
+              >📄</span
+            >
+            <span class="flex-1 text-left">Generate Dokumen</span>
+          </button>
+
+          <!-- Monitoring Dokumen -->
+          <button
+            class="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-red-100 hover:bg-white/10 transition"
+          >
+            <span
+              class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/5 text-xs"
+              >📈</span
+            >
+            <span class="flex-1 text-left">Monitoring Dokumen</span>
+          </button>
+
+          <!-- QA Checklist -->
+          <button
+            class="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-red-100 hover:bg-white/10 transition"
+          >
+          </button>
+
+          <hr class="border-red-800/40 my-3" />
+
+          <h2
+            class="px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-red-100/70 mb-2"
+          >
+            Lainnya
+          </h2>
+
+          <button
+            class="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-red-100 hover:bg-white/10 transition"
+          >
+            <span
+              class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/5 text-xs"
+              >📝</span
+            >
+            <span class="flex-1 text-left">Defect Log (Soon)</span>
+          </button>
+
+          <button
+            class="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-red-100 hover:bg-white/10 transition"
+          >
+            <span
+              class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-white/5 text-xs"
+              >🗃️</span
+            >
+            <span class="flex-1 text-left">Dokumen IT QA (Soon)</span>
+          </button>
+        </nav>
+
+        <!-- Footer -->
+        <div
+          class="px-4 py-3 border-t border-red-800/40 text-[11px] text-red-100/80"
+        >
+          <p class="font-semibold">IT QA · Bank Jakarta</p>
+          <p>v1.0 · Internal Dashboard</p>
+        </div>
+      </aside>
+
+      <!-- ============ MAIN CONTENT ============ -->
+      <main class="flex-1 flex flex-col">
+        <!-- TOP BAR -->
+        <header
+          class="w-full bg-bj-darkSoft text-slate-100 shadow-md px-4 md:px-6 py-3 flex items-center justify-between gap-4"
+        >
+          <!-- Logo mini (mobile) -->
+          <div class="flex items-center gap-3">
+            <div
+              class="md:hidden h-9 w-9 flex items-center justify-center rounded-full bg-white/10 border border-white/20 overflow-hidden"
+            >
+              <img
+                src="bankjakarta.png"
+                alt="Bank Jakarta"
+                class="h-7 object-contain"
+              />
+            </div>
+            <div>
+              <h1 class="text-sm md:text-lg font-semibold">
+                Generate Dokumen QA · Bank Jakarta
+              </h1>
+              <p class="text-[11px] text-slate-300">
+                Form generate dokumen tetap dikelola di Google Sheets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pills -->
+          <div class="flex flex-wrap items-center gap-2 text-[11px]">
+            <span
+              class="inline-flex items-center rounded-full border border-slate-600 bg-slate-800/60 px-3 py-[5px]"
+            >
+              <span class="w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
+              Google Sheets · Apps Script
+            </span>
+            <span
+              class="inline-flex items-center rounded-full border border-slate-600 bg-slate-800/60 px-3 py-[5px]"
+            >
+              Mode:
+              <span class="font-semibold ml-1 text-amber-300">
+                QA Automation
+              </span>
+            </span>
+            <span
+              class="hidden sm:inline-flex items-center rounded-full border border-slate-600 bg-slate-800/60 px-3 py-[5px]"
+            >
+              Release: v1.0 (UI Bank)
+            </span>
+          </div>
+        </header>
+
+        <!-- CONTENT -->
+        <section class="flex-1 p-4 md:p-6 bg-slate-100">
+          <!-- Tombol back kecil di pojok kanan atas konten -->
+          <div class="flex justify-end mb-4">
+            <a
+              href="index.html"
+              class="inline-flex items-center text-xs text-slate-500 hover:text-slate-800"
+            >
+              ✕ Kembali ke Dashboard
+            </a>
+          </div>
+
+          <!-- Card utama -->
+          <div
+            class="max-w-2xl mx-auto bg-white rounded-2xl shadow-md border border-slate-200/70 px-6 py-8 md:px-10 md:py-10"
+          >
+            <h2 class="text-xl md:text-2xl font-semibold text-bj-dark mb-2">
+              Buka Sheet Generate Dokumen QA
+            </h2>
+            <p class="text-sm text-slate-600 mb-6">
+              Form <strong>Generate Dokumen</strong> tetap dikelola di Google
+              Sheets. Klik tombol di bawah untuk membuka sheet
+              <strong>"Generate Doc"</strong> pada tab baru, sementara
+              dashboard QA kamu tetap terbuka.
+            </p>
+
+            <div class="flex flex-col gap-4">
+              <!-- Tombol buka sheet -->
+              <a
+                href="https://docs.google.com/spreadsheets/d/1AJ5SUjKw3PDEk5haB6Y36NKT9qh8G3WHFjjRgVDrUOg/edit?gid=1941251391#gid=1941251391"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex justify-center items-center gap-2 rounded-full bg-bj-red px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-red-800 transition"
+              >
+                ⚡ Buka Google Sheet Generate Doc
+              </a>
+
+              <p class="text-[12px] text-slate-500">
+                Jika tab tidak terbuka otomatis, klik
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1AJ5SUjKw3PDEk5haB6Y36NKT9qh8G3WHFjjRgVDrUOg/edit?gid=1941251391#gid=1941251391"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-bj-red underline"
+                  >link ini</a
+                >
+                secara manual.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
