@@ -27,18 +27,29 @@
   </head>
 
   <body class="min-h-screen bg-slate-100 text-slate-900">
-    <div class="flex min-h-screen">
-      <!-- SIDEBAR -->
-      <aside class="hidden md:flex w-64 flex-col bg-bj-red text-white shadow-xl">
+    <!-- WRAPPER: kolom di mobile, 2 kolom di md+ -->
+    <div class="flex min-h-screen flex-col md:flex-row">
+      <!-- SIDEBAR (desktop & tablet landscape) -->
+      <aside
+        class="hidden md:flex w-full md:w-64 flex-col bg-bj-red text-white shadow-xl"
+      >
         <!-- Logo -->
-        <div class="flex items-center gap-3 px-6 py-4 border-b border-red-700/40">
+        <div
+          class="flex items-center gap-3 px-6 py-4 border-b border-red-700/40"
+        >
           <div
             class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 border border-white/30 overflow-hidden"
           >
-            <img src="bankjakarta.png" alt="Bank Jakarta" class="h-8 object-contain" />
+            <img
+              src="bankjakarta.png"
+              alt="Bank Jakarta"
+              class="h-8 object-contain"
+            />
           </div>
           <div>
-            <p class="text-xs uppercase tracking-[0.2em] text-red-100/80">Bank Jakarta</p>
+            <p class="text-xs uppercase tracking-[0.2em] text-red-100/80">
+              Bank Jakarta
+            </p>
             <p class="text-sm font-semibold">QA Monitoring</p>
           </div>
         </div>
@@ -85,11 +96,6 @@
             <span class="flex-1 text-left">Monitoring Dokumen</span>
           </button>
 
-          <button
-            class="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-red-100 hover:bg-white/10 transition"
-          >
-          </button>
-
           <hr class="border-red-800/40 my-3" />
 
           <h2
@@ -120,7 +126,9 @@
         </nav>
 
         <!-- Footer -->
-        <div class="px-4 py-3 border-t border-red-800/40 text-[11px] text-red-100/80">
+        <div
+          class="px-4 py-3 border-t border-red-800/40 text-[11px] text-red-100/80"
+        >
           <p class="font-semibold">IT QA · Bank Jakarta</p>
           <p>Version: v1.0 (BETA)</p>
         </div>
@@ -133,22 +141,30 @@
           class="w-full bg-bj-darkSoft text-slate-100 shadow-md px-4 md:px-6 py-3 flex items-center justify-between gap-4"
         >
           <!-- Logo mini (mobile) -->
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-3 min-w-0">
             <div
-              class="md:hidden h-9 w-9 flex items-center justify-center rounded-full bg-white/10 border border-white/20 overflow-hidden"
+              class="md:hidden h-9 w-9 flex items-center justify-center rounded-full bg-white/10 border border-white/20 overflow-hidden flex-shrink-0"
             >
-              <img src="bankjakarta.png" alt="Bank Jakarta" class="h-7 object-contain" />
+              <img
+                src="bankjakarta.png"
+                alt="Bank Jakarta"
+                class="h-7 object-contain"
+              />
             </div>
-            <div>
-              <h1 class="text-sm md:text-lg font-semibold">QA Docs Dashboard · Bank Jakarta</h1>
-              <p class="text-[11px] text-slate-300">
+            <div class="min-w-0">
+              <h1 class="text-sm md:text-lg font-semibold truncate">
+                QA Docs Dashboard · Bank Jakarta
+              </h1>
+              <p class="text-[11px] text-slate-300 truncate">
                 Panel dokumentasi & monitoring QA untuk channel perbankan.
               </p>
             </div>
           </div>
 
           <!-- Pills (hitam + oranye) -->
-          <div class="flex flex-wrap items-center gap-2 text-[11px]">
+          <div
+            class="flex flex-wrap items-center justify-end gap-2 text-[11px]"
+          >
             <span
               class="inline-flex items-center rounded-full border border-black/60 bg-black/80 px-3 py-[5px]"
             >
@@ -160,7 +176,9 @@
             >
               <span class="text-slate-100">
                 Mode:
-                <span class="font-semibold ml-1 text-orange-300">QA Automation</span>
+                <span class="font-semibold ml-1 text-orange-300"
+                  >QA Automation</span
+                >
               </span>
             </span>
             <span
@@ -172,189 +190,279 @@
         </header>
 
         <!-- CONTENT WRAPPER -->
-        <section class="flex-1 p-4 md:p-6">
-          <!-- hero gradient card -->
-          <div
-            class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-bj-redSoft2 via-white to-slate-100 shadow-lg mb-6"
-          >
-            <div class="absolute inset-0 opacity-25 pointer-events-none">
-              <!-- ilustrasi diagonal -->
-              <div
-                class="absolute -bottom-10 -left-32 w-[340px] h-40 rotate-[-18deg] bg-gradient-to-r from-bj-red to-orange-400 rounded-[40px]"
-              ></div>
-              <div
-                class="absolute -bottom-16 -left-10 w-[340px] h-40 rotate-[-18deg] bg-gradient-to-r from-bj-redSoft to-bj-redSoft2 rounded-[40px]"
-              ></div>
-            </div>
-
-            <div class="relative px-5 md:px-8 py-4 md:py-5 flex flex-col gap-4">
-              <div class="flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <h2 class="text-xl md:text-2xl font-semibold text-bj-red">
-                    Dashboard Dokumentasi QA
-                  </h2>
-                  <p class="text-[13px] text-bj-dark/80 max-w-xl">
-                    Pantau dokumen SIT/UAT, status review, dan progres QA untuk tiap kanal perbankan
-                    (JakOne, ATM, CMS, dll) dalam satu tampilan.
-                  </p>
-                </div>
-
-                <div class="flex flex-wrap gap-2">
-                  <!-- HERO: Quick Generate Doc -->
-                  <button
-                    onclick="openSheetPanel()"
-                    class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400 to-bj-red px-4 py-2 text-xs font-semibold text-white shadow-md hover:shadow-lg hover:brightness-105 transition"
-                  >
-                    ⚡ Quick Generate Doc
-                  </button>
-                </div>
+        <section class="flex-1 px-3 py-4 md:px-6 md:py-6">
+          <div class="max-w-6xl mx-auto space-y-6">
+            <!-- hero gradient card -->
+            <div
+              class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-bj-redSoft2 via-white to-slate-100 shadow-lg"
+            >
+              <div class="absolute inset-0 opacity-25 pointer-events-none">
+                <!-- ilustrasi diagonal -->
+                <div
+                  class="absolute -bottom-10 -left-32 w-[260px] sm:w-[320px] h-32 sm:h-40 rotate-[-18deg] bg-gradient-to-r from-bj-red to-orange-400 rounded-[40px]"
+                ></div>
+                <div
+                  class="absolute -bottom-16 -left-10 w-[260px] sm:w-[320px] h-32 sm:h-40 rotate-[-18deg] bg-gradient-to-r from-bj-redSoft to-bj-redSoft2 rounded-[40px]"
+                ></div>
               </div>
-            </div>
-          </div>
 
-          <!-- GRID -->
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 items-start">
-            <!-- LEFT COLUMN (2 col) -->
-            <div class="lg:col-span-2 space-y-4">
-              <!-- Generate card -->
               <div
-                class="bg-white rounded-2xl shadow-md border border-slate-200/70 overflow-hidden"
+                class="relative px-4 sm:px-5 md:px-8 py-4 md:py-5 flex flex-col gap-4"
               >
-                <div class="px-5 py-4 flex items-center justify-between gap-4">
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="h-10 w-10 flex items-center justify-center rounded-xl bg-bj-redSoft2 border border-bj-redSoft"
+                <div
+                  class="flex flex-wrap items-center justify-between gap-4"
+                >
+                  <div class="max-w-xl space-y-1">
+                    <h2
+                      class="text-lg sm:text-xl md:text-2xl font-semibold text-bj-red"
                     >
-                      <span class="text-bj-red text-xl">📄</span>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-semibold text-bj-dark">Generate Doc</h3>
-                      <p class="text-xs text-slate-500">
-                        Buat dokumen QA (SIT/UAT, evidence, dsb) langsung dari data di Sheets.
-                      </p>
-                    </div>
+                      Dashboard Dokumentasi QA
+                    </h2>
+                    <p class="text-[12px] sm:text-[13px] text-bj-dark/80">
+                      Pantau dokumen SIT/UAT, status review, dan progres QA
+                      untuk tiap kanal perbankan (JakOne, ATM, CMS, dll) dalam
+                      satu tampilan.
+                    </p>
                   </div>
-                  <span
-                    class="text-[11px] rounded-full bg-bj-redSoft2 border border-bj-redSoft px-3 py-[3px] text-bj-red"
-                    >Mode: Auto Template</span
-                  >
-                </div>
-                <div class="px-5 pb-4 text-[13px] text-slate-600">
-                  <p>
-                    Input <strong>Project</strong>, <strong>Tipe Dokumen</strong>, dan
-                    <strong>PIC</strong>. Sistem akan mencatat ke sheet dan (opsional) membuat
-                    Google Docs dari template standar Bank Jakarta.
-                  </p>
-                  <div class="mt-4 flex flex-wrap items-center justify-between">
-                    <!-- CARD: Buka Generate Doc -->
+
+                  <div class="flex flex-wrap gap-2">
+                    <!-- HERO: Quick Generate Doc -->
                     <button
                       onclick="openSheetPanel()"
-                      class="inline-flex items-center gap-2 rounded-full bg-bj-red px-4 py-2 text-xs font-semibold text-white shadow-md hover:bg-red-800 transition"
+                      class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-400 to-bj-red px-4 py-2 text-[11px] sm:text-xs font-semibold text-white shadow-md hover:shadow-lg hover:brightness-105 transition"
                     >
-                      ⚡ Buka Generate Doc
+                      ⚡ Quick Generate Doc
                     </button>
-                    <div class="flex flex-wrap gap-2 text-[10px] text-slate-500">
-                      <span class="px-3 py-[3px] rounded-full border border-slate-200"
-                        >Standar dokumen QA</span
-                      >
-                      <span class="px-3 py-[3px] rounded-full border border-slate-200"
-                        >Integrasi Sheets–Docs</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Monitoring card mini -->
-              <div
-                class="bg-white rounded-2xl shadow-md border border-slate-200/70 overflow-hidden"
-              >
-                <div class="px-5 py-4 flex items-center justify-between gap-4">
-                  <div class="flex items-center gap-3">
-                    <div
-                      class="h-10 w-10 flex items-center justify-center rounded-xl bg-bj-redSoft2 border border-bj-redSoft"
-                    >
-                      <span class="text-bj-red text-xl">📈</span>
-                    </div>
-                    <div>
-                      <h3 class="text-lg font-semibold text-bj-dark">Monitoring Doc</h3>
-                      <p class="text-xs text-slate-500">
-                        Lihat jumlah dokumen yang sudah selesai, masih review, atau belum
-                        terbentuk.
-                      </p>
-                    </div>
-                  </div>
-                  <span
-                    class="text-[11px] rounded-full bg-bj-redSoft2 border border-bj-redSoft px-3 py-[3px] text-bj-red"
-                    >Mode: Tracking</span
-                  >
-                </div>
-
-                <div class="px-5 pb-4 text-[13px] text-slate-600">
-                  <p>
-                    Data diambil dari sheet <strong>QA_Docs</strong>, sehingga bisa
-                    diintegrasikan dengan monitoring QA yang sudah ada (per channel, per
-                    project).
-                  </p>
-                  <div class="mt-4 flex flex-wrap items-center justify-between">
-                    <button
-                      onclick="openMonitoringPanel()"
-                      class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-bj-darkSoft to-bj-red px-4 py-2 text-xs font-semibold text-white shadow-md hover:brightness-110 transition"
-                    >
-                      👀 Buka Monitoring
-                    </button>
-                    <div class="flex flex-wrap gap-2 text-[10px] text-slate-500">
-                      <span class="px-3 py-[3px] rounded-full border border-slate-200"
-                        >Status real-time</span
-                      >
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- RIGHT COLUMN – Snapshot -->
+            <!-- GRID -->
             <div
-              class="bg-white rounded-2xl shadow-md border border-slate-200/70 flex flex-col"
+              class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 items-start"
             >
-              <div class="px-5 py-4 border-b border-slate-200/60">
-                <h3 class="text-lg font-semibold text-bj-dark">
-                  Proggress
-                </h3>
-              </div>
-
-              <div class="px-5 py-4 space-y-4">
-                <div class="grid grid-cols-3 gap-3 text-center">
-                  <div class="rounded-xl border border-slate-200 bg-slate-50 py-3">
-                    <p class="text-[11px] text-slate-500">Dokumen terbentuk</p>
-                    <!-- ID untuk angka -->
-                    <p id="statGenerated" class="mt-1 text-xl font-semibold text-bj-red">0</p>
+              <!-- LEFT COLUMN (2 col) -->
+              <div class="lg:col-span-2 space-y-4">
+                <!-- Generate card -->
+                <div
+                  class="bg-white rounded-2xl shadow-md border border-slate-200/70 overflow-hidden"
+                >
+                  <div
+                    class="px-4 sm:px-5 py-4 flex flex-wrap items-center justify-between gap-4"
+                  >
+                    <div class="flex items-center gap-3 min-w-0">
+                      <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-bj-redSoft2 border border-bj-redSoft flex-shrink-0"
+                      >
+                        <span class="text-bj-red text-xl">📄</span>
+                      </div>
+                      <div class="min-w-0">
+                        <h3
+                          class="text-base sm:text-lg font-semibold text-bj-dark"
+                        >
+                          Generate Doc
+                        </h3>
+                        <p
+                          class="text-[11px] sm:text-xs text-slate-500 leading-snug"
+                        >
+                          Buat dokumen QA (SIT/UAT, evidence, dsb) langsung dari
+                          data di Sheets.
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="text-[10px] sm:text-[11px] rounded-full bg-bj-redSoft2 border border-bj-redSoft px-3 py-[3px] text-bj-red whitespace-nowrap"
+                      >Mode: Auto Template</span
+                    >
                   </div>
-                  <div class="rounded-xl border border-slate-200 bg-slate-50 py-3">
-                    <p class="text-[11px] text-slate-500">Menunggu review</p>
-                    <p id="statReview" class="mt-1 text-xl font-semibold text-orange-500">0</p>
-                  </div>
-                  <div class="rounded-xl border border-slate-200 bg-slate-50 py-3">
-                    <p class="text-[11px] text-slate-500">Selesai / Approved</p>
-                    <p id="statApproved" class="mt-1 text-xl font-semibold text-bj-red">0</p>
+                  <div
+                    class="px-4 sm:px-5 pb-4 text-[12px] sm:text-[13px] text-slate-600"
+                  >
+                    <p>
+                      Input <strong>Project</strong>,
+                      <strong>Tipe Dokumen</strong>, dan
+                      <strong>PIC</strong>. Sistem akan mencatat ke sheet dan
+                      (opsional) membuat Google Docs dari template standar Bank
+                      Jakarta.
+                    </p>
+                    <div
+                      class="mt-4 flex flex-wrap items-center justify-between gap-2"
+                    >
+                      <!-- CARD: Buka Generate Doc -->
+                      <button
+                        onclick="openSheetPanel()"
+                        class="inline-flex items-center gap-2 rounded-full bg-bj-red px-4 py-2 text-[11px] sm:text-xs font-semibold text-white shadow-md hover:bg-red-800 transition"
+                      >
+                        ⚡ Buka Generate Doc
+                      </button>
+                      <div
+                        class="flex flex-wrap gap-2 text-[10px] text-slate-500"
+                      >
+                        <span
+                          class="px-3 py-[3px] rounded-full border border-slate-200"
+                          >Standar dokumen QA</span
+                        >
+                        <span
+                          class="px-3 py-[3px] rounded-full border border-slate-200"
+                          >Integrasi Sheets–Docs</span
+                        >
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <p class="text-[11px] text-slate-500">
-                  Dokumen <span class="font-semibold">belum dibuat</span>:
-                  <span id="statNotCreated" class="font-semibold text-bj-red">0</span>
-                </p>
+                <!-- Monitoring card mini -->
+                <div
+                  class="bg-white rounded-2xl shadow-md border border-slate-200/70 overflow-hidden"
+                >
+                  <div
+                    class="px-4 sm:px-5 py-4 flex flex-wrap items-center justify-between gap-4"
+                  >
+                    <div class="flex items-center gap-3 min-w-0">
+                      <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-bj-redSoft2 border border-bj-redSoft flex-shrink-0"
+                      >
+                        <span class="text-bj-red text-xl">📈</span>
+                      </div>
+                      <div class="min-w-0">
+                        <h3
+                          class="text-base sm:text-lg font-semibold text-bj-dark"
+                        >
+                          Monitoring Doc
+                        </h3>
+                        <p
+                          class="text-[11px] sm:text-xs text-slate-500 leading-snug"
+                        >
+                          Lihat jumlah dokumen yang sudah selesai, masih
+                          review, atau belum terbentuk.
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="text-[10px] sm:text-[11px] rounded-full bg-bj-redSoft2 border border-bj-redSoft px-3 py-[3px] text-bj-red whitespace-nowrap"
+                      >Mode: Tracking</span
+                    >
+                  </div>
 
-                <div class="mt-2 border-t border-dashed border-slate-200 pt-3">
-                  <p class="text-[11px] font-semibold text-slate-600 mb-1">
-                    Aktivitas terakhir
+                  <div
+                    class="px-4 sm:px-5 pb-4 text-[12px] sm:text-[13px] text-slate-600"
+                  >
+                    <p>
+                      Data diambil dari sheet <strong>QA_Docs</strong>,
+                      sehingga bisa diintegrasikan dengan monitoring QA yang
+                      sudah ada (per channel, per project).
+                    </p>
+                    <div
+                      class="mt-4 flex flex-wrap items-center justify-between gap-2"
+                    >
+                      <button
+                        onclick="openMonitoringPanel()"
+                        class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-bj-darkSoft to-bj-red px-4 py-2 text-[11px] sm:text-xs font-semibold text-white shadow-md hover:brightness-110 transition"
+                      >
+                        👀 Buka Monitoring
+                      </button>
+                      <div
+                        class="flex flex-wrap gap-2 text-[10px] text-slate-500"
+                      >
+                        <span
+                          class="px-3 py-[3px] rounded-full border border-slate-200"
+                          >Status real-time</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN – Snapshot -->
+              <div
+                class="bg-white rounded-2xl shadow-md border border-slate-200/70 flex flex-col"
+              >
+                <div class="px-4 sm:px-5 py-4 border-b border-slate-200/60">
+                  <h3 class="text-base sm:text-lg font-semibold text-bj-dark">
+                    Progress
+                  </h3>
+                </div>
+
+                <div class="px-4 sm:px-5 py-4 space-y-4">
+                  <div
+                    class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center"
+                  >
+                    <div
+                      class="rounded-xl border border-slate-200 bg-slate-50 py-3 px-2"
+                    >
+                      <p class="text-[11px] text-slate-500">
+                        Dokumen terbentuk
+                      </p>
+                      <p
+                        id="statGenerated"
+                        class="mt-1 text-lg sm:text-xl font-semibold text-bj-red"
+                      >
+                        0
+                      </p>
+                    </div>
+                    <div
+                      class="rounded-xl border border-slate-200 bg-slate-50 py-3 px-2"
+                    >
+                      <p class="text-[11px] text-slate-500">
+                        Menunggu review
+                      </p>
+                      <p
+                        id="statReview"
+                        class="mt-1 text-lg sm:text-xl font-semibold text-orange-500"
+                      >
+                        0
+                      </p>
+                    </div>
+                    <div
+                      class="rounded-xl border border-slate-200 bg-slate-50 py-3 px-2"
+                    >
+                      <p class="text-[11px] text-slate-500">
+                        Selesai / Approved
+                      </p>
+                      <p
+                        id="statApproved"
+                        class="mt-1 text-lg sm:text-xl font-semibold text-bj-red"
+                      >
+                        0
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-[11px] text-slate-500">
+                    Dokumen <span class="font-semibold">belum dibuat</span>:
+                    <span
+                      id="statNotCreated"
+                      class="font-semibold text-bj-red"
+                      >0</span
+                    >
                   </p>
-                  <!-- UL akan diisi dari API -->
-                  <ul id="activityList" class="space-y-1 text-[11px] text-slate-600">
-                    <li>• CMS Sub Account – SIT – Draft dokumen terbentuk</li>
-                    <li>• JakOne Mobile – UAT – Evidence tambahan di-upload</li>
-                    <li>• CMS BPJS BPU – UAT – Menunggu review user</li>
-                  </ul>
+
+                  <div
+                    class="mt-2 border-t border-dashed border-slate-200 pt-3"
+                  >
+                    <p
+                      class="text-[11px] font-semibold text-slate-600 mb-1"
+                    >
+                      Aktivitas terakhir
+                    </p>
+                    <!-- UL akan diisi dari API -->
+                    <ul
+                      id="activityList"
+                      class="space-y-1 text-[11px] text-slate-600"
+                    >
+                      <li>
+                        • CMS Sub Account – SIT – Draft dokumen terbentuk
+                      </li>
+                      <li>
+                        • JakOne Mobile – UAT – Evidence tambahan di-upload
+                      </li>
+                      <li>
+                        • CMS BPJS BPU – UAT – Menunggu review user
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -530,14 +638,21 @@
       // =======================
       async function loadDashboardStats() {
         try {
-          if (!MONITORING_API_URL || MONITORING_API_URL.includes("PASTE_WEB_APP_ID_DI_SINI")) {
+          if (
+            !MONITORING_API_URL ||
+            MONITORING_API_URL.includes("PASTE_WEB_APP_ID_DI_SINI")
+          ) {
             console.warn("MONITORING_API_URL belum di-set.");
             return;
           }
 
           const res = await fetch(MONITORING_API_URL);
           if (!res.ok) {
-            console.error("Gagal fetch monitoring API:", res.status, res.statusText);
+            console.error(
+              "Gagal fetch monitoring API:",
+              res.status,
+              res.statusText
+            );
             return;
           }
 
